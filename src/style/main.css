@@ -5,7 +5,8 @@ html {
   overflow-y: overlay;
   overflow-x: hidden;
 }
-p, pre {
+
+html, body, p, pre {
   padding: 0;
   margin: 0;
 }
@@ -16,11 +17,11 @@ p, pre {
   height: 8px;
 }
 ::-webkit-scrollbar-thumb {
-  background:rgba(195, 96, 155, 0.3);
+  background:rgba(197, 197, 197, 0.3);
   cursor: pointer !important;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background:rgba(195, 96, 155, 0.6);
+  background:rgba(191, 191, 191, 0.6);
 }
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -39,7 +40,7 @@ p, pre {
   opacity: 0;
 }
 
-/* page active */
+/* opacity active */
 .opacity-enter-active {
   transition: all 0.3s ease-out;
 }

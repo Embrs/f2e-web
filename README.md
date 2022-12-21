@@ -16,5 +16,3 @@ npm install
 npm run dev
 ```
 ### Lint with [ESLint](https://eslint.org/)
-
-## UI 庫 [Veu Antd](https://antdv.com/components/overview-cn)
