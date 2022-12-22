@@ -5,7 +5,7 @@ const $gsap = inject("$gsap");
 
 onMounted(() => {
   // gsap.registerPlugin(ScrollTrigger, TextPlugin);
-  const srollTL = $gsap.timeline({
+  const srollTL = $gsap.gsap.timeline({
     scrollTrigger: {
       trigger: ".section3",
       pin: true,

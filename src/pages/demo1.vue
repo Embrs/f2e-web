@@ -4,7 +4,7 @@ import { inject, onMounted } from "vue";
 const $gsap = inject("$gsap");
 
 onMounted(() => {
-  const tl = $gsap.timeline({
+  const tl = $gsap.gsap.timeline({
     scrollTrigger: {
       trigger: ".box1", // 決定scrolltrigger要以哪一個元素作為觸發基準點
       markers: false, // 開啟start & end標記點，單純方便瀏覽動畫開始與結束點

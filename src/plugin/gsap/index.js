@@ -5,5 +5,5 @@ import TextPlugin from "gsap/TextPlugin";
 gsap.registerPlugin(ScrollTrigger, TextPlugin); 
 
 export const ProvideGsap = (app) => {
-  app.provide("$gsap", gsap);
+  app.provide("$gsap", {gsap, ScrollTrigger, TextPlugin});
 };
