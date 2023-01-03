@@ -4,50 +4,56 @@ const $gsap = inject("$gsap");
 
 onMounted(() => {
   // 建立 time line
-  const srollTL = $gsap.gsap.timeline({
+  const scrollTL = $gsap.gsap.timeline({
     scrollTrigger: {
       trigger: "#Section1",
       pin: true,
       scrub: true,
+      duration: 20
     },
   });
 
   // step1 雲、人移動
-  srollTL.to(".clound-r1", { xPercent: "100", opacity: 0.5});
-  srollTL.to(".clound-r2", { xPercent: "150", opacity: 0.5 }, "<");
-  srollTL.to(".clound-l1", { xPercent: "-100", opacity: 0.5 }, "<");
-  srollTL.to(".clound-l2", { xPercent: "-150", opacity: 0.5 }, "<");
-  srollTL.to(".man", {yPercent: "10", scale: 0.9}, "<");
+  scrollTL.to(".clound-r1", { xPercent: "100", opacity: 0.5});
+  scrollTL.to(".clound-r2", { xPercent: "150", opacity: 0.5 }, "<");
+  scrollTL.to(".clound-l1", { xPercent: "-100", opacity: 0.5 }, "<");
+  scrollTL.to(".clound-l2", { xPercent: "-150", opacity: 0.5 }, "<");
+  scrollTL.to(".man", {yPercent: "10", scale: 0.9}, "<");
   
   // step2 持續顯示 info
-  srollTL.to(".lavel-info-area", { opacity: 1 , duration: 1}); // 延長
+  scrollTL.to(".lavel-info-area", { opacity: 1 , duration: 1}); // 延長
 
-  // step3 隱藏 info 顯示 山1
-  srollTL.to(".lavel-info-area", { opacity: 0 });
-  srollTL.to(".mask-mountain-area", { opacity: 1 }, "<");
-  srollTL.to(".mountain-1", { opacity: 1 }, "<");
-  srollTL.from(".mountain-text-1", { xPercent: "-150" }, "<");
-  srollTL.to(".mountain-text-1", { opacity: 1 }, "<");
-  srollTL.to(".mountain-1", { opacity: 1,  duration: 2});
+  // step3 隱藏 info 顯示 山
+  scrollTL.to(".lavel-info-area", { opacity: 0 });
+  scrollTL.to(".mask-mountain-area", { opacity: 1 }, "<");
+  // 山1
+  scrollTL.to(".mountain-1", { opacity: 1 }, "<");
+  scrollTL.from(".mountain-text-1", { xPercent: "-150" }, "<");
+  scrollTL.to(".mountain-text-1", { opacity: 1 }, "<");
+
+  scrollTL.to(".mountain-1", { opacity: 1,  duration: 2}); // 延長顯示
   // 山2
-  srollTL.to(".mountain-2", { opacity: 1 });
-  srollTL.from(".mountain-text-2", { yPercent: "150" }, "<");
-  srollTL.to(".mountain-text-2", { opacity: 1 }, "<");
-  srollTL.to(".mountain-1", { opacity: 0 }, "<");
-  srollTL.to(".mountain-text-1", { opacity: 0 }, "<");
-  srollTL.to(".mountain-2", { opacity: 1,  duration: 2});
+  scrollTL.to(".mountain-2", { opacity: 1 });
+  scrollTL.from(".mountain-text-2", { yPercent: "150" }, "<");
+  scrollTL.to(".mountain-text-2", { opacity: 1 }, "<");
+  // 刪山1
+  scrollTL.to(".mountain-1", { opacity: 0 }, "<");
+  scrollTL.to(".mountain-text-1", { opacity: 0 }, "<");
+
+  scrollTL.to(".mountain-2", { opacity: 1,  duration: 2}); // 延長顯示
   // 山3
-  srollTL.to(".mountain-3", { opacity: 1 });
-  srollTL.from(".mountain-text-3", { xPercent: "150" }, "<");
-  srollTL.to(".mountain-text-3", { opacity: 1 }, "<");
-  srollTL.to(".mountain-2", { opacity: 0 }, "<");
-  srollTL.to(".mountain-text-2", { opacity: 0 }, "<");
-  srollTL.to(".mountain-3", { opacity: 1,  duration: 3});
+  scrollTL.to(".mountain-3", { opacity: 1 });
+  scrollTL.from(".mountain-text-3", { xPercent: "150" }, "<");
+  scrollTL.to(".mountain-text-3", { opacity: 1 }, "<");
+  // 刪山2
+  scrollTL.to(".mountain-2", { opacity: 0 }, "<");
+  scrollTL.to(".mountain-text-2", { opacity: 0 }, "<");
+
+  scrollTL.to(".mountain-3", { opacity: 1,  duration: 2}); // 延長顯示
 
   // step4 恢復
-  srollTL.to(".mask-mountain-area", { opacity: 0 });
-  srollTL.to(".lavel-info-area", { opacity: 1}, "<");
-  srollTL.to(".lavel-info-area", { opacity: 1});
+  scrollTL.to(".mask-mountain-area", { opacity: 0 });
+  scrollTL.to(".lavel-info-area", { opacity: 1,  duration: 2});
 });
 </script>
 
@@ -157,6 +163,7 @@ section#Section1
     flex-direction: column;
     align-items: center;
     color: white;
+    white-space:nowrap;
   }
   .man-area {
     z-index: 1;
@@ -247,6 +254,7 @@ section#Section1
     color: white;
     line-height: 10px;
     letter-spacing: 2px;
+    box-shadow: 0px 0px 30px rgba(65, 135, 123, 0.25);
   }
   //--------------------------
   .text-group {

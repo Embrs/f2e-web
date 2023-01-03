@@ -69,7 +69,6 @@ onMounted(() => {
   $gsap.gsap.utils.toArray(".card-item").forEach((el) => {
     $gsap.ScrollTrigger.create({
         trigger: el,
-        
         onEnter: function () { Animated(el); },
         onEnterBack: function () { Animated(el); },
         onLeave: function () { Hide(el); },
@@ -80,7 +79,7 @@ onMounted(() => {
 </script>
 
 <template lang="pug">
-#Section2
+section#Section2
   .title-area
     .main-title {{"F2E大神帶你練功"}}
   .loop-area
@@ -127,7 +126,7 @@ onMounted(() => {
     transform: rotate(-20deg);
   }
   .introduce-area {
-    width: calc(100vw - 160px);
+    width: calc(100vw - 165px);
     position: relative;
     z-index: 1;
     display: grid;

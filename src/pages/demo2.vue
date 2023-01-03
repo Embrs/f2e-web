@@ -5,7 +5,7 @@ const $gsap = inject("$gsap");
 
 onMounted(() => {
   // gsap.registerPlugin(ScrollTrigger, TextPlugin);
-  const srollTL = $gsap.gsap.timeline({
+  const scrollTL = $gsap.gsap.timeline({
     scrollTrigger: {
       trigger: ".section3",
       pin: true,
@@ -14,10 +14,10 @@ onMounted(() => {
     },
   });
   
-  srollTL.to(".gate-left-1", { yPercent: "-100" });
-  srollTL.to(".gate-right-1", { yPercent: "100" }, "<");
-  srollTL.to(".gate-left-2", { yPercent: "-100" });
-  srollTL.to(".gate-right-2", { yPercent: "100" }, "<");
+  scrollTL.to(".gate-left-1", { yPercent: "-100" });
+  scrollTL.to(".gate-right-1", { yPercent: "100" }, "<");
+  scrollTL.to(".gate-left-2", { yPercent: "-100" });
+  scrollTL.to(".gate-right-2", { yPercent: "100" }, "<");
 });
 </script>
 
@@ -51,7 +51,7 @@ onMounted(() => {
     position: relative;
     display: flex;
     height: 100vh;
-   overflow: hidden;
+    overflow: hidden;
   }
   i {
     font-size: 10rem;
