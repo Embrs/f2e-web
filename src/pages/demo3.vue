@@ -49,26 +49,26 @@ const animated = (element) => {
   );
 };
 onMounted(()=> {
-  $gsap.gsap.utils.toArray(".animation-wrapper").forEach((element) =>  {
+  $gsap.gsap.utils.toArray(".animation-wrapper").forEach((el) =>  {
     if (
-      element.classList.contains("from-left") ||
-      element.classList.contains("from-right")
+      el.classList.contains("from-left") ||
+      el.classList.contains("from-right")
     ) {
-      // hide(element);
+      // hide(el);
       $gsap.ScrollTrigger.create({
-        trigger: element,
+        trigger: el,
         markers: true,
         onEnter: function () {
-          animated(element);
+          animated(el);
         },
         onEnterBack: function () {
-          animated(element);
+          animated(el);
         },
         onLeave: function () {
-          hide(element);
+          hide(el);
         },
       });
-    } else if(element.classList.contains("typing")) {
+    } else if(el.classList.contains("typing")) {
       const typing1Content = "這裡是第一段";
       const typing2Content = "這裡是第二段";
       const typing3Content = "這裡是第三段";
