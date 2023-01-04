@@ -13,7 +13,7 @@ export default defineConfig({
     Pages(),
     Layouts(),
   ],
-  base: "/f2e-web/",
+  base: "/f2e-web/", // github page use
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url))
