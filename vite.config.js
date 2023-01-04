@@ -13,7 +13,7 @@ export default defineConfig({
     Pages(),
     Layouts(),
   ],
-  base: "/vue3-web/",
+  base: "/f2e-web/",
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url))
